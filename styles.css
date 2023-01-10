@@ -12,6 +12,19 @@ body {
   background-attachment: fixed;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  display: none;
+  border-radius: 10px;
+}
+
 header {
   width: 100%;
 }
@@ -52,10 +65,11 @@ header a {
   padding: 0 80px;
   border: 1px solid #ebebeb;
   font-size: 14px;
+  justify-content: space-between;
 }
 
 .airbnb {
-  width: 32.7%;
+  min-width: 249px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -74,13 +88,16 @@ header a {
 }
 .buscador {
   display: flex;
-  width: 509px;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 530px;
   flex-direction: row;
   height: 48px;
   border: 1px solid #dddd;
   border-radius: 40px;
   box-shadow: 0px 0.2px 3px 0px rgba(0, 0, 0, 0.2);
-  margin: 0 24px;
+  padding-right: 8px;
+  padding-left: 25px;
 }
 
 .buscador:hover {
@@ -108,36 +125,50 @@ header a {
   justify-content: center;
   align-items: center;
   justify-self: end;
-  margin: 0 7px 0 14px;
+  margin: 0 0 0 14px;
+}
+
+.destiny-button-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .uno {
   background-color: #fff;
-  width: 153px;
   font-size: 14px;
   border: 0px solid #dddd;
   border-radius: 24px 0 0 24px;
   font-weight: bold;
   color: #393939;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 25%;
 }
 .dos {
   background-color: #fff;
-  width: 213px;
   font-size: 14px;
   border: 0px solid #dddd;
   font-weight: bold;
   color: #393939;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 40%;
 }
 
 .tres {
   background-color: #fff;
-  width: 140px;
   font-size: 14px;
   border: 0px solid #dddd;
   border-radius: 0 40px 40px 0;
   display: flex;
   align-items: center;
   justify-content: end;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .cantidad {
@@ -145,7 +176,6 @@ header a {
 }
 .configuracion {
   height: 100%;
-  width: 32.5%;
   display: flex;
   justify-content: end;
 }
@@ -166,6 +196,7 @@ header a {
   border-radius: 20px;
   display: flex;
   width: 77px;
+  min-width: 77px;
   height: 42px;
   align-items: center;
   padding: 5px 5px 5px 12px;
@@ -178,6 +209,18 @@ header a {
   cursor: pointer;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s easy;
+}
+
+.host-call-to-action {
+  background-color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px;
+  min-width: 100px;
+}
+
+.host-call-to-action:hover {
+  cursor: pointer;
+  background-color: #f7f7f7;
 }
 
 .personita {
@@ -193,17 +236,6 @@ header a {
   align-items: center;
   font-weight: bold;
   color: #2d2d2d;
-}
-
-.hidden {
-  background-color: #fff;
-  padding: 12px 15px;
-  border-radius: 20px;
-}
-
-.hidden:hover {
-  cursor: pointer;
-  background-color: #f7f7f7;
 }
 
 .categories-nav {
@@ -227,7 +259,6 @@ header a {
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease;
   margin-right: 37px;
-  /* width: 116px; */
 }
 
 .nav-category-first {
@@ -260,7 +291,7 @@ header a {
   display: -webkit-box;
   width: 100%;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-x: scroll;
 }
 
 .nav-categorie-last {
@@ -283,31 +314,16 @@ header a {
   cursor: pointer;
 }
 
-/* .nav-categorie-1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: flex-end;
-  font-size: 12px;
-  background-color: #fff;
-  border: 0px;
-  color: #000;
-  font-weight: bold;
-  border-bottom: 2px solid #000;
-  transition: all 0.2s ease;
-} */
-
 .main {
   width: 100%;
   padding: 0 80px;
   margin: 16px 0 40px;
-  /* background-color: #929292; */
   height: 1375px;
   display: flex;
 }
 
 .places-container {
-  width: 1570px;
+  width: 100%;
   height: 1267px;
   display: flex;
   flex-wrap: wrap;
@@ -318,21 +334,26 @@ header a {
 .places {
   cursor: pointer;
   width: 18.8%;
-  /* height: 30%; */
   height: 380px;
-  /* background-color: #ff385c; */
   margin-bottom: 40px;
   font-size: 15px;
+  flex: 1;
+  min-width: 290px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .places-first-line {
   cursor: pointer;
   width: 18.8%;
-  /* height: 30%; */
   height: 380px;
   margin-bottom: 42px;
   font-size: 15px;
   margin-top: 7px;
+  flex: 1;
+  min-width: 290px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .image-1 {
@@ -344,7 +365,6 @@ header a {
 .title {
   font-weight: bold;
   font-size: 15px;
-  /* padding-right: 140px; */
 }
 
 .info {
@@ -510,20 +530,6 @@ footer a {
 
 .footer-right-section {
   display: flex;
-}
-
-@media screen and (max-width: 1440px) {
-  .principal {
-    padding: 0 40px;
-  }
-
-  .categories-nav {
-    padding: 0 40px;
-  }
-
-  .main {
-    padding: 0 40px;
-  }
 }
 
 .image-div {
@@ -718,4 +724,48 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1440px) {
+  .principal {
+    padding: 0 40px;
+  }
+
+  .categories-nav {
+    padding: 0 40px;
+  }
+
+  .main {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .airbnb-title {
+    display: none;
+  }
+
+  .airbnb {
+    min-width: 0px;
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .airbnb {
+    display: none;
+  }
+
+  .configuracion {
+    display: none;
+  }
+
+  .buscador {
+    flex: 1;
+    max-width: none;
+  }
+
+  .informacion {
+    display: none;
+  }
 }
